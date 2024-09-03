@@ -47,13 +47,3 @@ private:
         return false;
     }
 };
-
-int main() {
-    GoodHours gh;
-    cout << gh.howMany("11:11", "11:11") << endl;  // Output: 1
-    cout << gh.howMany("00:56", "12:32") << endl;  // Output: 164
-    cout << gh.howMany("00:00", "00:59") << endl;  // Output: 60
-    cout << gh.howMany("10:10", "10:20") << endl;  // Output: 2
-
-    return 0;
-}
