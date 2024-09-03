@@ -1,2 +1,3 @@
 GoodHours:
-- Initial thoughts:
+- Initial thoughts: At first when reading the rules of the problem, I get how Johnny likes some moments of the clock, but still don't get it when it comes to 2 moments beforeTime and afterTime, while we only need one string moment to calculate the good hour. But after reading the rules more carefully, I found out that we have to return the total moments of good hours between these two moments string inclusively, which is more complicated than normal. For this problem, at first, I thought of setting up each variable H1, H2, M1, M2 for saving time into the variables first (converting  string to integer) and a variable count to return the final result, then use 4 for-loops to iterate each digit. Through some calculations, we will increase the count by one through each loop if the condition is satisfied. After finishing all 4 loops, return the final result.
+- Reflections: 
