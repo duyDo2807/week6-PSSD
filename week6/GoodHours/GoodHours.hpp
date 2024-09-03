@@ -9,9 +9,13 @@ public:
         int beforeMinutes = convertToMinutes(beforeTime);
         int afterMinutes = convertToMinutes(afterTime);
         
+        if (beforeMinutes > afterMinutes) {
+            afterMinutes += 24 * 60;
+        }
+        
         int goodTimesCount = 0;
-        for (int time = beforeMinutes; time <= afterMinutes; ++time) {
-            string currentTime = convertToTimeString(time);
+        for (int time = beforeMinutes; time <= afterMinutes; time++) {
+            string currentTime = convertToTimeString(time % (24 * 60));  // Mod to wrap back to 00:00 after 23:59
             if (isGoodTime(currentTime)) {
                 goodTimesCount++;
             }
@@ -40,8 +44,8 @@ private:
         int m1 = time[3] - '0';
         int m2 = time[4] - '0';
         
-        if (h1 * h2 == m1 * m2) return true;
         if (h1 == h2 * m1 * m2) return true;
+        if (h1 * h2 == m1 * m2) return true;
         if (h1 * h2 * m1 == m2) return true;
         
         return false;
